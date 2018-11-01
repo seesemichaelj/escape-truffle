@@ -209,6 +209,15 @@ contract PackageRegistry is Authorized, PackageRegistryInterface {
     return releaseDb.releaseExists(releaseDb.hashRelease(nameHash, versionHash));
   }
 
+  /// @dev Return the total number of packages
+  function getNumPackages()
+    public
+    view
+    returns (uint)
+  {
+    return packageDb.getNumPackages();
+  }
+
   /// @dev Returns a slice of the array of all package hashes for the named package.
   /// @param _offset The starting index for the slice.
   /// @param limit  The length of the slice
